@@ -84,6 +84,17 @@
 
         </div>
     </div>
+
+
+    <!-- charts start here -->
+    <div class="container m-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- charts end here -->
     <!-- counter section End-->
 <div class="container-fluid py-4">
     <h1 class="text-center">All Universities Details</h1>
@@ -184,7 +195,44 @@
     </div>
     <!-- detail data end here  -->
    
-    
+    <script>
+      window.onload = function() {
+      
+      var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+          text: "All Universities Video Charts"
+        },
+        data: [{
+          type: "pie",
+          startAngle: 25,
+          toolTipContent: "<b>{label}</b>: {y}%",
+          showInLegend: "true",
+          legendText: "{label}",
+          indexLabelFontSize: 16,
+          indexLabel: "{label} - {y}%",
+          dataPoints: [
+            { y: 15.08, label: "Anand Agricultural University" },
+            { y: 20.34, label: "Assam Agricultural University" },
+            { y: 10.62, label: "Acharya Narendra Deva University of Agriculture & Technology" },
+            { y: 15.02, label: "ANGRAU" },
+            { y: 14.07, label: "ANDHRA PRADESH FISHERIES UNIVERSITY" },
+            { y: 10.22, label: "Agriculture University  Jodhpur, Rajasthan" },
+            { y: 8.44, label: "	Agriculture University" },
+            { y: 2.54, label: "	Agriculture University, Kota Rajasthan" },
+            { y: 5.54, label: "	Bihar Animal Sciences University, Patna, Bihar" },
+            { y: 12.54, label: "Birsa Agricultural University, Kanke Ranchi, Jharkhand" },
+            { y: 20.54, label: "Bihar Agricultural University, Sabour, Bihar" }
+          ]
+        }]
+      });
+      chart.render();
+      
+      }
+      </script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
